@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dwns1e7c28aao"]
+
+[ext_resource type="PackedScene" uid="uid://i2kgha4cnppi" path="res://assets/phone.glb" id="1_08mii"]
+[ext_resource type="Script" uid="uid://brmh5jypq0rvb" path="res://scenes/phone.gd" id="1_ewalk"]
+[ext_resource type="PackedScene" uid="uid://c0camnmujguy3" path="res://scenes/interactable.tscn" id="3_eud1m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_osgb8"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Phone" type="Node3D" unique_id=875048456]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_ewalk")
+
+[node name="phone2" parent="." unique_id=1612494080 instance=ExtResource("1_08mii")]
+
+[node name="Interactable" parent="." unique_id=343320752 instance=ExtResource("3_eud1m")]
+interact_name = "Use phone"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=506207660]
+shape = SubResource("BoxShape3D_osgb8")

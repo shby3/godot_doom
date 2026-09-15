@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dtcbpeccaut3h"]
+
+[ext_resource type="Texture2D" uid="uid://b0x55bdrkvpqp" path="res://assets/Metal021_4K_Color.jpg" id="1_ji6l1"]
+[ext_resource type="Texture2D" uid="uid://dmhxswy6b6n2h" path="res://assets/Metal021_4K_Metalness.jpg" id="2_gl8kw"]
+[ext_resource type="Texture2D" uid="uid://8akg6gbs5vj3" path="res://assets/Metal021_4K_NormalDX.jpg" id="3_6st8w"]
+[ext_resource type="Texture2D" uid="uid://c1761xqcd32uf" path="res://assets/Metal021_4K_Roughness.jpg" id="4_vxv0d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnc54"]
+size = Vector3(4, 0.5, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4kvl"]
+albedo_texture = ExtResource("1_ji6l1")
+metallic = 1.0
+metallic_texture = ExtResource("2_gl8kw")
+roughness_texture = ExtResource("4_vxv0d")
+normal_enabled = true
+normal_scale = 11.6
+normal_texture = ExtResource("3_6st8w")
+
+[sub_resource type="BoxMesh" id="BoxMesh_lnc54"]
+material = SubResource("StandardMaterial3D_r4kvl")
+size = Vector3(4, 0.5, 4)
+
+[node name="ceiling" type="StaticBody3D" unique_id=1317484256]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1324845404]
+shape = SubResource("BoxShape3D_lnc54")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1347067906]
+mesh = SubResource("BoxMesh_lnc54")

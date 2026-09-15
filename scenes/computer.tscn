@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cjjscdwjecqnj"]
+
+[ext_resource type="Script" uid="uid://biv7g2xar52w1" path="res://scripts/computer.gd" id="1_uiul0"]
+[ext_resource type="PackedScene" uid="uid://1b7l6w0ftnrc" path="res://assets/tv.glb" id="2_tjrug"]
+[ext_resource type="PackedScene" uid="uid://cns15tu6ebp0" path="res://scenes/screen_ui.tscn" id="3_uiul0"]
+[ext_resource type="Script" uid="uid://d25mxty0b1djq" path="res://scripts/computer_cam.gd" id="4_ruko6"]
+[ext_resource type="PackedScene" uid="uid://c12kw64p68dn4" path="res://assets/keyboard.fbx" id="4_tjrug"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jr5mb"]
+viewport_path = NodePath("ScreenOffViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gcbbq"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_jr5mb")
+
+[sub_resource type="QuadMesh" id="QuadMesh_lnc54"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_gcbbq")
+size = Vector2(1.12, 0.76)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uiul0"]
+data = PackedVector3Array(0.56, -0.38, 0, -0.56, -0.38, 0, 0.56, 0.38, 0, -0.56, -0.38, 0, -0.56, 0.38, 0, 0.56, 0.38, 0)
+
+[node name="Computer" type="Node3D" unique_id=148736588]
+script = ExtResource("1_uiul0")
+
+[node name="TV" parent="." unique_id=425843636 instance=ExtResource("2_tjrug")]
+transform = Transform3D(2.08, 0, 0, 0, 2.08, 0, 0, 0, 2.08, 1.118, 0.632, -1.63)
+
+[node name="Quad" type="MeshInstance3D" parent="." unique_id=668354203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1149563, 1.2766848, -1.2661994)
+mesh = SubResource("QuadMesh_lnc54")
+
+[node name="Area3D" type="Area3D" parent="Quad" unique_id=1081586437]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Quad/Area3D" unique_id=706555744]
+shape = SubResource("ConcavePolygonShape3D_uiul0")
+
+[node name="ScreenOnViewport" type="SubViewport" parent="." unique_id=1662494862]
+size = Vector2i(1920, 1080)
+
+[node name="ScreenUI" parent="ScreenOnViewport" unique_id=1561478805 instance=ExtResource("3_uiul0")]
+
+[node name="ScreenOffViewport" type="SubViewport" parent="." unique_id=1009545121]
+size = Vector2i(1920, 1080)
+
+[node name="Camera3D" type="Camera3D" parent="ScreenOffViewport" unique_id=749826864]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 1.1373086, 1.2334094, -1.2584515)
+fov = 40.6
+
+[node name="ComputerCam" type="Camera3D" parent="." unique_id=973323734]
+transform = Transform3D(0.9999731, -1.5352687e-05, 0.007330305, 0, 0.9999978, 0.0020944087, -0.007330321, -0.0020943524, 0.999971, 1.1596507, 1.1899017, -0.230039)
+fov = 66.9
+script = ExtResource("4_ruko6")
+
+[node name="keyboard" parent="." unique_id=1482766802 instance=ExtResource("4_tjrug")]
+transform = Transform3D(0.67, 0, 0, 0, 0.59526885, -0.07519995, 0, 0.07519995, 0.59526885, 1.123, 0.626, -0.969)
+
+[connection signal="mouse_entered" from="ScreenOnViewport/ScreenUI" to="." method="_on_screen_ui_mouse_entered"]
+[connection signal="mouse_exited" from="ScreenOnViewport/ScreenUI" to="." method="_on_screen_ui_mouse_exited"]

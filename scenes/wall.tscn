@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bju4eyqx73121"]
+
+[ext_resource type="Texture2D" uid="uid://b2bp66o6vi0yi" path="res://assets/coral_fort_wall_01_diff_4k.jpg" id="1_wykyb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_272bh"]
+size = Vector3(4, 7.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkv2x"]
+albedo_texture = ExtResource("1_wykyb")
+
+[sub_resource type="BoxMesh" id="BoxMesh_lnc54"]
+material = SubResource("StandardMaterial3D_jkv2x")
+size = Vector3(4, 7.5, 0.5)
+
+[node name="Wall" type="StaticBody3D" unique_id=442658701]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1742340556]
+shape = SubResource("BoxShape3D_272bh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=495855034]
+mesh = SubResource("BoxMesh_lnc54")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ck4on36lncq5t"]
+
+[ext_resource type="PackedScene" uid="uid://ciy1hdexim16n" path="res://assets/lamp.glb" id="1_72t4t"]
+
+[node name="Lamp" type="Node3D" unique_id=849868070]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="lamp2" parent="." unique_id=1179119121 instance=ExtResource("1_72t4t")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.820216, 0, 1.215831)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=227231418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8288553, 1.2668556, 1.1851982)
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+omni_range = 1.934

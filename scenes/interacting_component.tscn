@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://72bckamfngxr"]
+
+[ext_resource type="Script" uid="uid://cy3v47ir21yp3" path="res://scripts/interacting_component.gd" id="1_0w7yd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqtel"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lnc54"]
+font_size = 80
+
+[node name="InteractingComponent" type="Node3D" unique_id=2016405776]
+script = ExtResource("1_0w7yd")
+
+[node name="InteractRange" type="Area3D" parent="." unique_id=1421018829]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractRange" unique_id=977676174]
+shape = SubResource("CapsuleShape3D_hqtel")
+
+[node name="InteractLabel" type="Label" parent="." unique_id=1111030370]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -236.0
+offset_top = -55.0
+offset_right = 236.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "E to Interact"
+label_settings = SubResource("LabelSettings_lnc54")
+
+[connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]

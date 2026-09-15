@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://coknvnwh2s4tj"]
+
+[ext_resource type="Texture2D" uid="uid://2cmfoc3uhxxx" path="res://assets/coral_ground_02_diff_4k.jpg" id="1_ukw5w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnc54"]
+size = Vector3(4, 0.5, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c41w6"]
+albedo_texture = ExtResource("1_ukw5w")
+
+[sub_resource type="BoxMesh" id="BoxMesh_lnc54"]
+material = SubResource("StandardMaterial3D_c41w6")
+size = Vector3(4, 0.5, 4)
+
+[node name="Floor" type="StaticBody3D" unique_id=107467209]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1498521977]
+shape = SubResource("BoxShape3D_lnc54")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=113805519]
+mesh = SubResource("BoxMesh_lnc54")

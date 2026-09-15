@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://cnhb7ub4ljisk"]
+
+[ext_resource type="Script" uid="uid://dm6idpn4o7qoc" path="res://scripts/player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://b3l8ckshbt3a4" path="res://assets/face.png" id="2_4ni07"]
+[ext_resource type="PackedScene" uid="uid://72bckamfngxr" path="res://scenes/interacting_component.tscn" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dtayp3asgsl5l" path="res://assets/arm/arm00057600.png" id="3_a38lo"]
+[ext_resource type="Texture2D" uid="uid://unhkbmbqhgl2" path="res://assets/arm/arm00057601.png" id="4_4ni07"]
+[ext_resource type="Texture2D" uid="uid://b2p12mx07vooq" path="res://assets/arm/arm00057602.png" id="5_l71n6"]
+[ext_resource type="Texture2D" uid="uid://lh0ubei0n2ji" path="res://assets/arm/arm00057603.png" id="6_ke2ow"]
+[ext_resource type="Texture2D" uid="uid://dxq4tafuidsok" path="res://assets/arm/arm00057604.png" id="7_ujl30"]
+[ext_resource type="Texture2D" uid="uid://d2w1p3rwmec" path="res://assets/arm/arm00057605.png" id="8_31cv2"]
+[ext_resource type="Texture2D" uid="uid://bt07k4jaxkm51" path="res://assets/arm/arm00057606.png" id="9_pf23h"]
+[ext_resource type="Texture2D" uid="uid://cs1ubexelpeav" path="res://assets/arm/arm00057607.png" id="10_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://cl764wbwsy2cx" path="res://assets/arm/arm00057608.png" id="11_wqfne"]
+[ext_resource type="Texture2D" uid="uid://br3n06stpx5hx" path="res://assets/arm/arm00057609.png" id="12_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://cys0c810v2a0m" path="res://assets/arm/arm00057610.png" id="13_gl8cc"]
+[ext_resource type="Texture2D" uid="uid://c0dyx26xhmmrt" path="res://assets/arm/arm00057611.png" id="14_487ah"]
+[ext_resource type="Texture2D" uid="uid://bjb1k6lj6wb56" path="res://assets/arm/arm00057612.png" id="15_md1ol"]
+[ext_resource type="Texture2D" uid="uid://deb3p4d8on111" path="res://assets/arm/arm00057613.png" id="16_bj30b"]
+[ext_resource type="Texture2D" uid="uid://brtdhohww8ni6" path="res://assets/arm/arm00057614.png" id="17_jc3p3"]
+[ext_resource type="Texture2D" uid="uid://dikgcloctk3ua" path="res://assets/arm/arm00057615.png" id="18_hax0n"]
+[ext_resource type="Texture2D" uid="uid://bw2p5x24u6an3" path="res://assets/arm/arm00057616.png" id="19_t4otl"]
+[ext_resource type="Texture2D" uid="uid://dqd5nf1flrfbu" path="res://assets/arm/arm00057617.png" id="20_j2b1d"]
+[ext_resource type="Texture2D" uid="uid://cf5qwx280g6ot" path="res://assets/arm/arm00057618.png" id="21_cs1tg"]
+[ext_resource type="Texture2D" uid="uid://c4vi8wfc7r3fm" path="res://assets/arm/arm00057619.png" id="22_2dvfe"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_4ni07"]
+albedo_texture = ExtResource("2_4ni07")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lnc54"]
+material = SubResource("ORMMaterial3D_4ni07")
+size = Vector2(0.41, 0.35)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hax0n"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lnc54"]
+material = SubResource("StandardMaterial3D_hax0n")
+size = Vector3(0.1, 1.75, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnc54"]
+size = Vector3(0.28, 1.75, 0.58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a38lo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_l71n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ke2ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ujl30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4ni07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a38lo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a38lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4ni07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l71n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ke2ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ujl30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_31cv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pf23h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dt7fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wqfne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wnwbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_487ah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_md1ol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bj30b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jc3p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_hax0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_t4otl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_j2b1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_cs1tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_2dvfe")
+}],
+"loop": 2,
+"name": &"walk",
+"speed": 9.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lnc54"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ke2ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ujl30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4ni07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a38lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l71n6")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a38lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4ni07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l71n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ke2ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ujl30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_31cv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pf23h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dt7fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wqfne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wnwbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_487ah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_md1ol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bj30b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jc3p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_hax0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_t4otl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_j2b1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_cs1tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_2dvfe")
+}],
+"loop": 2,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[node name="Player" type="CharacterBody3D" unique_id=282237205]
+script = ExtResource("1_4flbx")
+fall_acceleration = 6.0
+jump_impulse = 2.3
+
+[node name="Face" type="MeshInstance3D" parent="." unique_id=1492247745]
+transform = Transform3D(-1, 8.742278e-08, 4.371139e-08, -4.371139e-08, 1.9106855e-15, -1, -8.742278e-08, -1, 1.9106855e-15, -0.00088334084, 0.6430143, -0.05097896)
+mesh = SubResource("PlaneMesh_lnc54")
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1047080709]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_lnc54")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1907472138]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_lnc54")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1294093069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7538891, 0)
+
+[node name="RightHand" type="AnimatedSprite3D" parent="Camera3D" unique_id=937403030]
+transform = Transform3D(0.08, 0, 0, 0, 0.053530443, 0.059451587, 0, -0.059451587, 0.053530443, 0.17286682, -0.16894907, -0.071)
+sprite_frames = SubResource("SpriteFrames_a38lo")
+autoplay = "default"
+frame_progress = 0.75912046
+
+[node name="LeftHand" type="AnimatedSprite3D" parent="Camera3D" unique_id=314659043]
+transform = Transform3D(0.08, 0, 0, 0, 0.055294212, 0.05781479, 0, -0.05781479, 0.055294212, -0.15699425, -0.16531342, -0.071)
+flip_h = true
+sprite_frames = SubResource("SpriteFrames_lnc54")
+autoplay = "default"
+frame_progress = 0.99175954
+
+[node name="InteractingComponent" parent="." unique_id=2016405776 instance=ExtResource("2_onrkg")]

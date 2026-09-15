@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dnss0h2tetaii"]
+
+[ext_resource type="Texture2D" uid="uid://d0gpawtxl1vtp" path="res://assets/fairy.png" id="1_bwnlq"]
+[ext_resource type="Script" uid="uid://dnbscammlh7qr" path="res://scripts/fairy.gd" id="1_kf1oj"]
+[ext_resource type="PackedScene" uid="uid://c0camnmujguy3" path="res://scenes/interactable.tscn" id="2_i750c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3y0y"]
+transparency = 1
+albedo_texture = ExtResource("1_bwnlq")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0errm"]
+material = SubResource("StandardMaterial3D_s3y0y")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnc54"]
+size = Vector3(1, 0.5, 1)
+
+[node name="Fairy" type="Node3D" unique_id=222887761]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_kf1oj")
+
+[node name="Front" type="MeshInstance3D" parent="." unique_id=686268273]
+mesh = SubResource("PlaneMesh_0errm")
+
+[node name="Back" type="MeshInstance3D" parent="." unique_id=254484006]
+transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_0errm")
+
+[node name="Interactable" parent="." unique_id=343320752 instance=ExtResource("2_i750c")]
+interact_name = "Speak with Fairie"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1198055662]
+shape = SubResource("BoxShape3D_lnc54")
