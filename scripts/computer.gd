@@ -18,6 +18,7 @@ var is_on: bool = false
 func turn_on() -> void:
 	is_on = true
 	node_quad.mesh.material.albedo_texture.viewport_path = node_viewport.get_path()
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func turn_off() -> void:
 	is_on = false
@@ -116,11 +117,4 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 
 	# Finally, send the processed input event to the viewport.
 	node_viewport.push_input(event)
-
-# Make the mouse visible when using the screen
-func _on_screen_ui_mouse_entered() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
-# Turn the mouse back to normal otherwise
-func _on_screen_ui_mouse_exited() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	

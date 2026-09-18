@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://biv7g2xar52w1" path="res://scripts/computer.gd" id="1_uiul0"]
 [ext_resource type="PackedScene" uid="uid://1b7l6w0ftnrc" path="res://assets/tv.glb" id="2_tjrug"]
 [ext_resource type="PackedScene" uid="uid://cns15tu6ebp0" path="res://scenes/screen_ui.tscn" id="3_uiul0"]
-[ext_resource type="Script" uid="uid://d25mxty0b1djq" path="res://scripts/computer_cam.gd" id="4_ruko6"]
 [ext_resource type="PackedScene" uid="uid://c12kw64p68dn4" path="res://assets/keyboard.fbx" id="4_tjrug"]
+[ext_resource type="PackedScene" uid="uid://b8x2ne1xl53l1" path="res://scenes/sittable.tscn" id="5_uiul0"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_jr5mb"]
-viewport_path = NodePath("ScreenOffViewport")
+viewport_path = NodePath("ScreenOnViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gcbbq"]
 resource_local_to_scene = true
@@ -16,7 +16,7 @@ albedo_texture = SubResource("ViewportTexture_jr5mb")
 [sub_resource type="QuadMesh" id="QuadMesh_lnc54"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_gcbbq")
-size = Vector2(1.12, 0.76)
+size = Vector2(1.05, 0.66)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uiul0"]
 data = PackedVector3Array(0.56, -0.38, 0, -0.56, -0.38, 0, 0.56, 0.38, 0, -0.56, -0.38, 0, -0.56, 0.38, 0, 0.56, 0.38, 0)
@@ -28,7 +28,7 @@ script = ExtResource("1_uiul0")
 transform = Transform3D(2.08, 0, 0, 0, 2.08, 0, 0, 0, 2.08, 1.118, 0.632, -1.63)
 
 [node name="Quad" type="MeshInstance3D" parent="." unique_id=668354203]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1149563, 1.2766848, -1.2661994)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1185681, 1.275793, -1.2645446)
 mesh = SubResource("QuadMesh_lnc54")
 
 [node name="Area3D" type="Area3D" parent="Quad" unique_id=1081586437]
@@ -37,7 +37,7 @@ mesh = SubResource("QuadMesh_lnc54")
 shape = SubResource("ConcavePolygonShape3D_uiul0")
 
 [node name="ScreenOnViewport" type="SubViewport" parent="." unique_id=1662494862]
-size = Vector2i(1920, 1080)
+size = Vector2i(1960, 1120)
 
 [node name="ScreenUI" parent="ScreenOnViewport" unique_id=1561478805 instance=ExtResource("3_uiul0")]
 
@@ -51,10 +51,13 @@ fov = 40.6
 [node name="ComputerCam" type="Camera3D" parent="." unique_id=973323734]
 transform = Transform3D(0.9999731, -1.5352687e-05, 0.007330305, 0, 0.9999978, 0.0020944087, -0.007330321, -0.0020943524, 0.999971, 1.1596507, 1.1899017, -0.230039)
 fov = 66.9
-script = ExtResource("4_ruko6")
 
 [node name="keyboard" parent="." unique_id=1482766802 instance=ExtResource("4_tjrug")]
 transform = Transform3D(0.67, 0, 0, 0, 0.59526885, -0.07519995, 0, 0.07519995, 0.59526885, 1.123, 0.626, -0.969)
 
-[connection signal="mouse_entered" from="ScreenOnViewport/ScreenUI" to="." method="_on_screen_ui_mouse_entered"]
-[connection signal="mouse_exited" from="ScreenOnViewport/ScreenUI" to="." method="_on_screen_ui_mouse_exited"]
+[node name="Sittable" parent="." unique_id=107538485 node_paths=PackedStringArray("camera", "computer") instance=ExtResource("5_uiul0")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.0474398, -0.20610344, -0.593308)
+camera = NodePath("../ComputerCam")
+computer = NodePath("..")
+interact_name = "Use Computer"
+is_interactable = true

@@ -1,9 +1,9 @@
 extends Node3D
 
 @export var player: CharacterBody3D
-@export var computer_cam: Camera3D
 @export var player_cam: Camera3D
-@export var computer: Node3D
+
+const WORLD_SPEED: float = 0.25
 
 # Use MOUSE_MODE_CAPTURED when true
 var cap_mouse: bool = true
@@ -22,17 +22,13 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		toggle_pause()
 
-func _on_chair_interacted(target_position: Vector3) -> void:
-	player.sit_down(target_position)
-	computer_cam.make_current()
+func _on_screen_interacted(target_cam: Camera3D, computer: Node3D) -> void:
+	target_cam.make_current()
+	player.sit_down()
 	computer.turn_on()
 
-
-func _on_chair_interaction_ended() -> void:
-	player.sit_up()
+func _on_screen_interaction_ended(computer: Node3D) -> void:
 	player_cam.make_current()
+	player.sit_up()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	computer.turn_off()
-
-
-func _on_window_interacted() -> void:
-	pass # Replace with function body.

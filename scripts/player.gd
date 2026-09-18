@@ -10,13 +10,13 @@ var look_dir: Vector2
 @onready var camera: Camera3D = $Camera3D
 var camera_sens: float = 50.0
 
-func sit_down(seat_position: Vector3) -> void:
-	global_position = seat_position
+func sit_down() -> void:
 	set_physics_process(false)
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	hide()
 
 func sit_up() -> void:
 	set_physics_process(true)
+	show()
 
 func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("left", "right", "forward", "back")

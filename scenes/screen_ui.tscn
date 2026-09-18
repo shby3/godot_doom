@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://cns15tu6ebp0"]
 
-[ext_resource type="Script" uid="uid://biuxpw0soc424" path="res://scenes/screen.gd" id="1_0yxf7"]
-[ext_resource type="PackedScene" uid="uid://chcj7up8k8pa8" path="res://addons/easy_charts/examples/line_chart/line_chart_example.tscn" id="1_ekp0p"]
-[ext_resource type="Shader" uid="uid://ouypnjlobnui" path="res://scripts/computer.gdshader" id="1_ij14n"]
+[ext_resource type="Script" uid="uid://bicla5ofvig4d" path="res://scripts/screen.gd" id="1_r7l27"]
 [ext_resource type="Texture2D" uid="uid://cct4g0gidn417" path="res://assets/hand/hand00057600.png" id="3_8tcj5"]
 [ext_resource type="Texture2D" uid="uid://v1gj73g6jtq3" path="res://assets/hand/hand00057601.png" id="4_qfn51"]
 [ext_resource type="Texture2D" uid="uid://b560k0hdak0ke" path="res://assets/hand/hand00057602.png" id="5_ugxhh"]
@@ -32,11 +30,18 @@
 [ext_resource type="Texture2D" uid="uid://dy10rdoxs25wv" path="res://assets/hand/hand00057626.png" id="29_c0e8u"]
 [ext_resource type="Texture2D" uid="uid://c1vm8t0ty0kj5" path="res://assets/hand/hand00057627.png" id="30_6gx7p"]
 [ext_resource type="Texture2D" uid="uid://sjcguf5tujcy" path="res://assets/hand/hand00057628.png" id="31_673fs"]
+[ext_resource type="PackedScene" uid="uid://cibjrsuxfqgwp" path="res://scenes/forum.tscn" id="32_8tcj5"]
+[ext_resource type="Shader" uid="uid://ouypnjlobnui" path="res://scripts/computer.gdshader" id="32_qfn51"]
 
 [sub_resource type="Theme" id="Theme_ruko6"]
+default_font_size = 80
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 16
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 TabContainer/font_sizes/font_size = 22
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8tcj5"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ocat5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -131,29 +136,29 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0errm"]
-shader = ExtResource("1_ij14n")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ocat5"]
+shader = ExtResource("32_qfn51")
 shader_parameter/overlay = false
-shader_parameter/scanlines_opacity = 0.1600000076
-shader_parameter/scanlines_width = 0.0590000028025
-shader_parameter/grille_opacity = 0.0
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
 shader_parameter/resolution = Vector2(640, 480)
 shader_parameter/pixelate = false
-shader_parameter/roll = true
-shader_parameter/roll_speed = 7.08
-shader_parameter/roll_size = 33.750001603125
-shader_parameter/roll_variation = 0.71100003051262
-shader_parameter/distort_intensity = 0.0400000019
-shader_parameter/noise_opacity = 0.2750000130625
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
 shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.4350000206625
-shader_parameter/aberration = 0.03
-shader_parameter/brightness = 3.76
-shader_parameter/discolor = false
-shader_parameter/warp_amount = 0.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.1390000066025
+shader_parameter/vignette_opacity = 0.5
 
 [node name="Monitor" type="Control" unique_id=1561478805]
 layout_mode = 3
@@ -164,27 +169,73 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_ruko6")
 
-[node name="Screen" type="PanelContainer" parent="." unique_id=541694791]
+[node name="TopBorder" type="Control" parent="." unique_id=1216597806]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_vertical = 0
+offset_transform_enabled = true
+
+[node name="RightBorder" type="Control" parent="." unique_id=219819365]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -549.5
+offset_bottom = 549.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 0
+offset_transform_enabled = true
+
+[node name="LeftBorder" type="Control" parent="." unique_id=789770530]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -559.0
+offset_right = 20.0
+offset_bottom = 551.0
+grow_vertical = 2
+size_flags_vertical = 0
+offset_transform_enabled = true
+
+[node name="Screen" type="PanelContainer" parent="." unique_id=587861806]
+propagate_maximum_size = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = -20.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0yxf7")
+script = ExtResource("1_r7l27")
 
-[node name="LineChartExample" parent="Screen" unique_id=973791368 instance=ExtResource("1_ekp0p")]
-layout_mode = 2
-mouse_filter = 1
-
-[node name="Cursor" type="AnimatedSprite2D" parent="Screen" unique_id=930914485]
+[node name="Cursor" type="AnimatedSprite2D" parent="Screen" unique_id=1610462550]
 z_index = 1
-sprite_frames = SubResource("SpriteFrames_8tcj5")
+sprite_frames = SubResource("SpriteFrames_ocat5")
 autoplay = "default"
-frame_progress = 0.8502537
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=749896043]
-material = SubResource("ShaderMaterial_0errm")
+[node name="ForumPage" parent="Screen" unique_id=843602012 instance=ExtResource("32_8tcj5")]
+layout_mode = 2
+
+[node name="BottomBorder" type="Control" parent="Screen" unique_id=503797039]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=972283006]
+material = SubResource("ShaderMaterial_ocat5")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -193,3 +244,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
+
+[connection signal="mouse_entered" from="TopBorder" to="Screen" method="_on_border_mouse_entered"]
+[connection signal="mouse_entered" from="RightBorder" to="Screen" method="_on_border_mouse_entered"]
+[connection signal="mouse_entered" from="LeftBorder" to="Screen" method="_on_border_mouse_entered"]
+[connection signal="mouse_entered" from="Screen" to="Screen" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Screen/BottomBorder" to="Screen" method="_on_border_mouse_entered"]
+
+[editable path="Screen/ForumPage"]
+[editable path="Screen/ForumPage/Posts/VBoxContainer/doomsayer1"]
+[editable path="Screen/ForumPage/Posts/VBoxContainer/doomsayer2"]
+[editable path="Screen/ForumPage/Posts/VBoxContainer/doomsayer3"]
+[editable path="Screen/ForumPage/Posts/VBoxContainer/doomsayer4"]
+[editable path="Screen/ForumPage/Posts/VBoxContainer/doomsayer5"]
+[editable path="Screen/ForumPage/Posts/VBoxContainer/doomsayer6"]
+[editable path="Screen/ForumPage/Posts/VBoxContainer/doomsayer7"]

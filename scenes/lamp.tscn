@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ciy1hdexim16n" path="res://assets/lamp.glb" id="1_72t4t"]
 
-[node name="Lamp" type="Node3D" unique_id=849868070]
+[node name="Lamp" type="Node3D" unique_id=778089809]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="lamp2" parent="." unique_id=1179119121 instance=ExtResource("1_72t4t")]

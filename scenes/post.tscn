@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b357k2yacla5e"]
+
+[ext_resource type="Script" uid="uid://c867ocw5uaaf7" path="res://scripts/post.gd" id="1_ax5sd"]
+[ext_resource type="Texture2D" uid="uid://dcu4q1g2sgve4" path="res://assets/thumb.png" id="1_epv1v"]
+[ext_resource type="Theme" uid="uid://c3tkniba87gtj" path="res://themes/default_theme.tres" id="2_7rr5g"]
+
+[node name="Post" type="HBoxContainer" unique_id=1758838794]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("2_7rr5g")
+script = ExtResource("1_ax5sd")
+
+[node name="Title" type="Button" parent="." unique_id=1023976302]
+custom_minimum_size = Vector2(0, 200)
+custom_maximum_size = Vector2(-1, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "New Post"
+alignment = 0
+
+[node name="Posted" type="Label" parent="Title" unique_id=273323880]
+layout_mode = 0
+offset_left = 1035.0
+offset_top = 67.0
+offset_right = 1262.0
+offset_bottom = 134.0
+text = "Posted by"
+
+[node name="Author" type="Label" parent="Title" unique_id=1099999902]
+layout_mode = 0
+offset_left = 1287.0
+offset_top = 68.0
+offset_right = 1449.0
+offset_bottom = 135.0
+size_flags_horizontal = 0
+theme = ExtResource("2_7rr5g")
+text = "Author"
+
+[node name="Upvote" type="Button" parent="." unique_id=1730376671]
+custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(200, -1)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Thumb" type="Sprite2D" parent="Upvote" unique_id=483280956]
+position = Vector2(97, 98)
+texture = ExtResource("1_epv1v")
+
+[connection signal="pressed" from="Title" to="." method="_on_title_pressed"]
+[connection signal="pressed" from="Upvote" to="." method="_on_upvote_pressed"]

@@ -1,0 +1,18 @@
+[gd_resource type="Theme" format=3 uid="uid://c3tkniba87gtj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eavc1"]
+bg_color = Color(4.3317677e-06, 0.7257284, 0.19081488, 1)
+
+[resource]
+default_font_size = 48
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 12
+Button/font_sizes/font_size = 64
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/shadow_outline_size = 7
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/shadow_outline_size = 7
+ScrollContainer/styles/panel = SubResource("StyleBoxFlat_eavc1")

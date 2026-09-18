@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://cmdk4cdfjp66j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60vai"]
+bg_color = Color(0.36078432, 0.7764706, 0.56078434, 0.59607846)
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_60vai")

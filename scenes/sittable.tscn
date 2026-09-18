@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b8x2ne1xl53l1"]
+
+[ext_resource type="Script" uid="uid://bkwrf33h45lim" path="res://scripts/sittable.gd" id="1_ok387"]
+[ext_resource type="PackedScene" uid="uid://c0camnmujguy3" path="res://scenes/interactable.tscn" id="2_flueh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s883f"]
+size = Vector3(0.8, 1, 0.8)
+
+[node name="Sittable" type="Node3D" unique_id=107538485]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_ok387")
+
+[node name="Interactable" parent="." unique_id=343320752 instance=ExtResource("2_flueh")]
+interact_name = "Sit at Desk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1279314217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.193815, 0)
+shape = SubResource("BoxShape3D_s883f")
+
+[node name="TargetPosition" type="Marker3D" parent="." unique_id=587928514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.779, -0.555)

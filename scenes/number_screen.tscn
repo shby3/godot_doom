@@ -1,0 +1,325 @@
+[gd_scene format=3 uid="uid://hp0siovnarva"]
+
+[ext_resource type="Script" uid="uid://dift8syjp85qv" path="res://scripts/number_screen.gd" id="1_fkoue"]
+[ext_resource type="Script" uid="uid://bicla5ofvig4d" path="res://scripts/screen.gd" id="1_s8mo7"]
+[ext_resource type="Texture2D" uid="uid://cct4g0gidn417" path="res://assets/hand/hand00057600.png" id="2_73hyg"]
+[ext_resource type="Texture2D" uid="uid://v1gj73g6jtq3" path="res://assets/hand/hand00057601.png" id="3_fkoue"]
+[ext_resource type="Texture2D" uid="uid://b560k0hdak0ke" path="res://assets/hand/hand00057602.png" id="4_q0uom"]
+[ext_resource type="Texture2D" uid="uid://0dkffgs21d6r" path="res://assets/hand/hand00057603.png" id="5_hfd87"]
+[ext_resource type="Texture2D" uid="uid://ywvn84cnlk05" path="res://assets/hand/hand00057604.png" id="6_ctyk0"]
+[ext_resource type="Texture2D" uid="uid://bk077i1r7higd" path="res://assets/hand/hand00057605.png" id="7_wvaku"]
+[ext_resource type="Texture2D" uid="uid://b7l6k4o01jngi" path="res://assets/hand/hand00057606.png" id="8_iwfdm"]
+[ext_resource type="Texture2D" uid="uid://b3jrnd6g1ns2l" path="res://assets/hand/hand00057607.png" id="9_55p5t"]
+[ext_resource type="Texture2D" uid="uid://dtfc4q0pmlxso" path="res://assets/hand/hand00057608.png" id="10_bte72"]
+[ext_resource type="Texture2D" uid="uid://gqu27ooo630a" path="res://assets/hand/hand00057609.png" id="11_pb5aw"]
+[ext_resource type="Texture2D" uid="uid://cjn5t40rsm3ll" path="res://assets/hand/hand00057610.png" id="12_uh7lc"]
+[ext_resource type="Texture2D" uid="uid://dmq3u307asltk" path="res://assets/hand/hand00057611.png" id="13_rcyrs"]
+[ext_resource type="Texture2D" uid="uid://dfar4jpv62o4p" path="res://assets/hand/hand00057612.png" id="14_flu4f"]
+[ext_resource type="Texture2D" uid="uid://7jvicbw0ile3" path="res://assets/hand/hand00057613.png" id="15_wn33s"]
+[ext_resource type="Texture2D" uid="uid://bbn7ylukx26pj" path="res://assets/hand/hand00057614.png" id="16_jnay3"]
+[ext_resource type="Texture2D" uid="uid://bb7fjpkl3o3ry" path="res://assets/hand/hand00057615.png" id="17_fi7et"]
+[ext_resource type="Texture2D" uid="uid://vshafs0w36hh" path="res://assets/hand/hand00057616.png" id="18_q3ha0"]
+[ext_resource type="Texture2D" uid="uid://b0ujydeqp6v8c" path="res://assets/hand/hand00057617.png" id="19_d31qx"]
+[ext_resource type="Texture2D" uid="uid://b7rgvqhoqpa7d" path="res://assets/hand/hand00057618.png" id="20_4a773"]
+[ext_resource type="Texture2D" uid="uid://cymycu6l65wpj" path="res://assets/hand/hand00057619.png" id="21_w1yho"]
+[ext_resource type="Texture2D" uid="uid://syc46xwsao3j" path="res://assets/hand/hand00057620.png" id="22_w3w4s"]
+[ext_resource type="Texture2D" uid="uid://ddn7i6ptarlq5" path="res://assets/hand/hand00057621.png" id="23_lwfhp"]
+[ext_resource type="Texture2D" uid="uid://b2x7nrkn04jo8" path="res://assets/hand/hand00057622.png" id="24_b65k8"]
+[ext_resource type="Texture2D" uid="uid://ct7efxpu6rgw8" path="res://assets/hand/hand00057623.png" id="25_38dns"]
+[ext_resource type="Texture2D" uid="uid://bni5e8qv84p8j" path="res://assets/hand/hand00057624.png" id="26_6emmj"]
+[ext_resource type="Texture2D" uid="uid://cb25314gc00j6" path="res://assets/hand/hand00057625.png" id="27_q61ju"]
+[ext_resource type="Texture2D" uid="uid://dy10rdoxs25wv" path="res://assets/hand/hand00057626.png" id="28_vo3f4"]
+[ext_resource type="Texture2D" uid="uid://c1vm8t0ty0kj5" path="res://assets/hand/hand00057627.png" id="29_v1sgf"]
+[ext_resource type="Texture2D" uid="uid://sjcguf5tujcy" path="res://assets/hand/hand00057628.png" id="30_tbhij"]
+[ext_resource type="PackedScene" uid="uid://b8x2ne1xl53l1" path="res://scenes/sittable.tscn" id="32_fkoue"]
+[ext_resource type="Shader" uid="uid://ouypnjlobnui" path="res://scripts/computer.gdshader" id="33_ctyk0"]
+[ext_resource type="Script" uid="uid://w5yno66kelyx" path="res://scripts/number_button.gd" id="33_hfd87"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lusib"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oh2fc"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_lusib")
+
+[sub_resource type="QuadMesh" id="QuadMesh_d24dr"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_oh2fc")
+size = Vector2(1.05, 0.66)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mumq7"]
+data = PackedVector3Array(0.56, -0.38, 0, -0.56, -0.38, 0, 0.56, 0.38, 0, -0.56, -0.38, 0, -0.56, 0.38, 0, 0.56, 0.38, 0)
+
+[sub_resource type="Theme" id="Theme_0errm"]
+Label/font_sizes/font_size = 800
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wvaku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_73hyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fkoue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q0uom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hfd87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ctyk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wvaku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_iwfdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_55p5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bte72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pb5aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_uh7lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rcyrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_flu4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wn33s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jnay3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fi7et")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_q3ha0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_d31qx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_4a773")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_w1yho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_w3w4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lwfhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_b65k8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_38dns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6emmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_q61ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vo3f4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_v1sgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_tbhij")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iwfdm"]
+shader = ExtResource("33_ctyk0")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[node name="NumberScreen" type="Node3D" unique_id=1218792458]
+script = ExtResource("1_fkoue")
+
+[node name="Quad" type="MeshInstance3D" parent="." unique_id=1450986913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0045126677, -0.0064436793, -0.0006572008)
+mesh = SubResource("QuadMesh_d24dr")
+
+[node name="Area3D" type="Area3D" parent="Quad" unique_id=1857562066]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Quad/Area3D" unique_id=1249941668]
+shape = SubResource("ConcavePolygonShape3D_mumq7")
+
+[node name="Viewport" type="SubViewport" parent="." unique_id=1722500913]
+size = Vector2i(1960, 1120)
+
+[node name="Monitor" type="Control" parent="Viewport" unique_id=49713764]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0errm")
+
+[node name="Screen" type="PanelContainer" parent="Viewport/Monitor" unique_id=1096092756]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s8mo7")
+
+[node name="Cursor" type="AnimatedSprite2D" parent="Viewport/Monitor/Screen" unique_id=1842786809]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_wvaku")
+autoplay = "default"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Viewport/Monitor/Screen" unique_id=2101528112]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Viewport/Monitor/Screen/HBoxContainer" unique_id=580037923]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+script = ExtResource("33_hfd87")
+
+[node name="Label" type="Label" parent="Viewport/Monitor/Screen/HBoxContainer/Button" unique_id=996077449]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="Viewport/Monitor/Screen/HBoxContainer" unique_id=1676557400]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+script = ExtResource("33_hfd87")
+
+[node name="Label" type="Label" parent="Viewport/Monitor/Screen/HBoxContainer/Button2" unique_id=1942404880]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="Viewport/Monitor/Screen/HBoxContainer" unique_id=499232092]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+script = ExtResource("33_hfd87")
+
+[node name="Label" type="Label" parent="Viewport/Monitor/Screen/HBoxContainer/Button3" unique_id=868960464]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomBorder" type="Control" parent="Viewport/Monitor/Screen" unique_id=1785740104]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 1
+
+[node name="TopBorder" type="Control" parent="Viewport/Monitor/Screen" unique_id=1068245962]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 1
+
+[node name="LeftBorder" type="Control" parent="Viewport/Monitor/Screen" unique_id=1164198317]
+custom_minimum_size = Vector2(60, 1080)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 1
+
+[node name="RightBorder" type="Control" parent="Viewport/Monitor/Screen" unique_id=1171193922]
+custom_minimum_size = Vector2(60, 1080)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="Viewport/Monitor" unique_id=84038284]
+visible = false
+material = SubResource("ShaderMaterial_iwfdm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="NumberScreenCam" type="Camera3D" parent="." unique_id=1090279765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.47775865)
+
+[node name="Sittable" parent="." unique_id=107538485 node_paths=PackedStringArray("camera", "computer") instance=ExtResource("32_fkoue")]
+transform = Transform3D(-0.022169279, -0.99975425, -8.757756e-08, -0.99975425, 0.022169279, -8.755604e-08, 1.5426906e-07, 1.4761206e-07, -0.58, 0.2265861, -0.26325166, 0.38049054)
+camera = NodePath("../NumberScreenCam")
+computer = NodePath("..")
+interact_name = "Use number screen"
+is_interactable = true
+
+[connection signal="mouse_entered" from="Viewport/Monitor/Screen" to="Viewport/Monitor/Screen" method="_on_mouse_entered"]
+[connection signal="pressed" from="Viewport/Monitor/Screen/HBoxContainer/Button" to="Viewport/Monitor/Screen/HBoxContainer/Button" method="_on_pressed"]
+[connection signal="value_changed" from="Viewport/Monitor/Screen/HBoxContainer/Button" to="." method="_on_button_value_changed"]
+[connection signal="pressed" from="Viewport/Monitor/Screen/HBoxContainer/Button2" to="Viewport/Monitor/Screen/HBoxContainer/Button2" method="_on_pressed"]
+[connection signal="value_changed" from="Viewport/Monitor/Screen/HBoxContainer/Button2" to="." method="_on_button_value_changed"]
+[connection signal="pressed" from="Viewport/Monitor/Screen/HBoxContainer/Button3" to="Viewport/Monitor/Screen/HBoxContainer/Button3" method="_on_pressed"]
+[connection signal="value_changed" from="Viewport/Monitor/Screen/HBoxContainer/Button3" to="." method="_on_button_value_changed"]
+[connection signal="mouse_entered" from="Viewport/Monitor/Screen/BottomBorder" to="Viewport/Monitor/Screen" method="_on_border_mouse_entered"]
+[connection signal="mouse_entered" from="Viewport/Monitor/Screen/TopBorder" to="Viewport/Monitor/Screen" method="_on_border_mouse_entered"]
+[connection signal="mouse_entered" from="Viewport/Monitor/Screen/LeftBorder" to="Viewport/Monitor/Screen" method="_on_border_mouse_entered"]
+[connection signal="mouse_entered" from="Viewport/Monitor/Screen/RightBorder" to="Viewport/Monitor/Screen" method="_on_border_mouse_entered"]
