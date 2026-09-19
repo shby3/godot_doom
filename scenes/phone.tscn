@@ -5,16 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://c0camnmujguy3" path="res://scenes/interactable.tscn" id="3_eud1m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_osgb8"]
-size = Vector3(0.5, 0.5, 0.5)
+size = Vector3(4.17, 4.48, 3.96)
 
 [node name="Phone" type="Node3D" unique_id=875048456]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 script = ExtResource("1_ewalk")
 
 [node name="phone2" parent="." unique_id=1612494080 instance=ExtResource("1_08mii")]
+transform = Transform3D(9.279426, -13.60135, 0, 6.2684574, 17.406023, 3.6775641, -2.4818578, -6.891532, 9.288466, 0, 0, 0)
 
 [node name="Interactable" parent="." unique_id=343320752 instance=ExtResource("3_eud1m")]
-interact_name = "Use phone"
+interact_name = "Interact Phone"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=506207660]
 shape = SubResource("BoxShape3D_osgb8")

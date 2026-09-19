@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://b8x2ne1xl53l1" path="res://scenes/sittable.tscn" id="32_fkoue"]
 [ext_resource type="Shader" uid="uid://ouypnjlobnui" path="res://scripts/computer.gdshader" id="33_ctyk0"]
 [ext_resource type="Script" uid="uid://w5yno66kelyx" path="res://scripts/number_button.gd" id="33_hfd87"]
+[ext_resource type="Texture2D" uid="uid://d0gpawtxl1vtp" path="res://assets/fairy.png" id="34_ctyk0"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_lusib"]
 viewport_path = NodePath("Viewport")
@@ -147,6 +148,14 @@ animations = [{
 "name": &"default",
 "speed": 20.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctyk0"]
+bg_color = Color(0.53395355, 0.9490439, 0.12061716, 0.21176471)
+
+[sub_resource type="Theme" id="Theme_ctyk0"]
+default_font_size = 200
+Button/constants/outline_size = 30
+Button/styles/normal = SubResource("StyleBoxFlat_ctyk0")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iwfdm"]
 shader = ExtResource("33_ctyk0")
@@ -290,8 +299,42 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 mouse_filter = 1
 
-[node name="ColorRect" type="ColorRect" parent="Viewport/Monitor" unique_id=84038284]
+[node name="Collectable" type="Control" parent="Viewport/Monitor/Screen" unique_id=256936409]
 visible = false
+layout_mode = 2
+theme = SubResource("Theme_ctyk0")
+
+[node name="Fairy" type="TextureRect" parent="Viewport/Monitor/Screen/Collectable" unique_id=1914265903]
+modulate = Color(0.52026945, 1.4980697e-06, 3.3691526e-07, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -416.0
+offset_top = -736.5
+offset_right = 416.0
+offset_bottom = 736.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("34_ctyk0")
+
+[node name="Button" type="Button" parent="Viewport/Monitor/Screen/Collectable" unique_id=277471906]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -971.5
+offset_top = -242.5
+offset_right = 971.5
+offset_bottom = 242.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click to Collect Fairy"
+
+[node name="ColorRect" type="ColorRect" parent="Viewport/Monitor" unique_id=84038284]
 material = SubResource("ShaderMaterial_iwfdm")
 layout_mode = 1
 anchors_preset = 15
@@ -312,7 +355,7 @@ computer = NodePath("..")
 interact_name = "Use number screen"
 is_interactable = true
 
-[connection signal="mouse_entered" from="Viewport/Monitor/Screen" to="Viewport/Monitor/Screen" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Viewport/Monitor/Screen/HBoxContainer" to="Viewport/Monitor/Screen" method="_on_screen_contents_mouse_entered"]
 [connection signal="pressed" from="Viewport/Monitor/Screen/HBoxContainer/Button" to="Viewport/Monitor/Screen/HBoxContainer/Button" method="_on_pressed"]
 [connection signal="value_changed" from="Viewport/Monitor/Screen/HBoxContainer/Button" to="." method="_on_button_value_changed"]
 [connection signal="pressed" from="Viewport/Monitor/Screen/HBoxContainer/Button2" to="Viewport/Monitor/Screen/HBoxContainer/Button2" method="_on_pressed"]
@@ -323,3 +366,4 @@ is_interactable = true
 [connection signal="mouse_entered" from="Viewport/Monitor/Screen/TopBorder" to="Viewport/Monitor/Screen" method="_on_border_mouse_entered"]
 [connection signal="mouse_entered" from="Viewport/Monitor/Screen/LeftBorder" to="Viewport/Monitor/Screen" method="_on_border_mouse_entered"]
 [connection signal="mouse_entered" from="Viewport/Monitor/Screen/RightBorder" to="Viewport/Monitor/Screen" method="_on_border_mouse_entered"]
+[connection signal="pressed" from="Viewport/Monitor/Screen/Collectable/Button" to="." method="_on_fairy_button_pressed"]

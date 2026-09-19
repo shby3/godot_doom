@@ -11,7 +11,13 @@ var is_on: bool = true
 
 const BUTTON_CODE = 3
 
-signal code_cracked
+signal fairy_collected
+
+var code_cracked: bool = false
+
+@onready var collectable: Control = $Viewport/Monitor/Screen/Collectable
+@onready var sittable: Node3D = $Sittable
+@onready var screen: PanelContainer = $Viewport/Monitor/Screen
 
 @onready var node_quad = $Quad
 @onready var node_area = $Quad/Area3D
@@ -127,4 +133,15 @@ func _on_button_value_changed() -> void:
 		if (button_1.num_value == BUTTON_CODE and button_2.num_value == BUTTON_CODE
 				and button_3.num_value == BUTTON_CODE):
 			print("code cracked")
-			code_cracked.emit()
+			_crack_code()
+
+func _crack_code() -> void:
+	collectable.show()
+
+func _on_fairy_button_pressed() -> void:
+	print("fairy collected")
+	fairy_collected.emit()
+	if is_instance_valid(screen):
+		screen.queue_free()
+	if is_instance_valid(sittable):
+		sittable.queue_free()

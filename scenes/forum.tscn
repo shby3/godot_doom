@@ -7,46 +7,8 @@
 [ext_resource type="Script" uid="uid://lt4j6nib3umc" path="res://scripts/comments.gd" id="4_unbx8"]
 [ext_resource type="Theme" uid="uid://cmdk4cdfjp66j" path="res://themes/comments_theme.tres" id="5_eavc1"]
 
-[sub_resource type="Resource" id="Resource_eavc1"]
+[sub_resource type="Resource" id="Resource_hd3h2"]
 script = ExtResource("4_0ryt7")
-title = "Doom"
-file = "res://resources/posts/doomsayer33_post.json"
-metadata/_custom_type_script = "uid://kfhkih0svaf6"
-
-[sub_resource type="Resource" id="Resource_0ryt7"]
-script = ExtResource("4_0ryt7")
-title = "Numbers"
-file = "res://resources/posts/numerology_post.json"
-metadata/_custom_type_script = "uid://kfhkih0svaf6"
-
-[sub_resource type="Resource" id="Resource_seyax"]
-script = ExtResource("4_0ryt7")
-title = "UpDown"
-file = "res://resources/posts/updown_post.json"
-metadata/_custom_type_script = "uid://kfhkih0svaf6"
-
-[sub_resource type="Resource" id="Resource_c6w0r"]
-script = ExtResource("4_0ryt7")
-title = "Fairy Defense"
-file = "res://resources/posts/fairy_defense.json"
-metadata/_custom_type_script = "uid://kfhkih0svaf6"
-
-[sub_resource type="Resource" id="Resource_y2x12"]
-script = ExtResource("4_0ryt7")
-title = "Fairy Post"
-file = "res://resources/posts/fairy_post.json"
-metadata/_custom_type_script = "uid://kfhkih0svaf6"
-
-[sub_resource type="Resource" id="Resource_hquun"]
-script = ExtResource("4_0ryt7")
-title = "Walls"
-file = "res://resources/posts/walls_post.json"
-metadata/_custom_type_script = "uid://kfhkih0svaf6"
-
-[sub_resource type="Resource" id="Resource_yh3v5"]
-script = ExtResource("4_0ryt7")
-title = "Fairy offense"
-file = "res://resources/posts/fairy_offense_post.json"
 metadata/_custom_type_script = "uid://kfhkih0svaf6"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fp7m"]
@@ -77,33 +39,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="doomsayer1" parent="Posts/VBoxContainer" unique_id=1758838794 instance=ExtResource("2_8rxvp")]
+[node name="cracks_clue" parent="Posts/VBoxContainer" unique_id=1758838794 instance=ExtResource("2_8rxvp")]
 layout_mode = 2
-post_content = SubResource("Resource_eavc1")
-
-[node name="doomsayer2" parent="Posts/VBoxContainer" unique_id=993785559 instance=ExtResource("2_8rxvp")]
-layout_mode = 2
-post_content = SubResource("Resource_0ryt7")
-
-[node name="doomsayer3" parent="Posts/VBoxContainer" unique_id=1952999551 instance=ExtResource("2_8rxvp")]
-layout_mode = 2
-post_content = SubResource("Resource_seyax")
-
-[node name="doomsayer4" parent="Posts/VBoxContainer" unique_id=61412951 instance=ExtResource("2_8rxvp")]
-layout_mode = 2
-post_content = SubResource("Resource_c6w0r")
-
-[node name="doomsayer5" parent="Posts/VBoxContainer" unique_id=1376729705 instance=ExtResource("2_8rxvp")]
-layout_mode = 2
-post_content = SubResource("Resource_y2x12")
-
-[node name="doomsayer6" parent="Posts/VBoxContainer" unique_id=1117079413 instance=ExtResource("2_8rxvp")]
-layout_mode = 2
-post_content = SubResource("Resource_hquun")
-
-[node name="doomsayer7" parent="Posts/VBoxContainer" unique_id=894975132 instance=ExtResource("2_8rxvp")]
-layout_mode = 2
-post_content = SubResource("Resource_yh3v5")
+post_content = SubResource("Resource_hd3h2")
 
 [node name="Comments" type="ScrollContainer" parent="." unique_id=1144478022 node_paths=PackedStringArray("title", "author", "post", "vbox_container")]
 visible = false
@@ -155,26 +93,8 @@ mouse_filter = 2
 text = "nnn"
 fit_content = true
 
-[connection signal="post_pressed" from="Posts/VBoxContainer/doomsayer1" to="." method="_on_post_post_pressed"]
-[connection signal="upvote_pressed" from="Posts/VBoxContainer/doomsayer1" to="." method="_on_post_upvote_pressed"]
-[connection signal="post_pressed" from="Posts/VBoxContainer/doomsayer2" to="." method="_on_post_post_pressed"]
-[connection signal="upvote_pressed" from="Posts/VBoxContainer/doomsayer2" to="." method="_on_post_upvote_pressed"]
-[connection signal="post_pressed" from="Posts/VBoxContainer/doomsayer3" to="." method="_on_post_post_pressed"]
-[connection signal="upvote_pressed" from="Posts/VBoxContainer/doomsayer3" to="." method="_on_post_upvote_pressed"]
-[connection signal="post_pressed" from="Posts/VBoxContainer/doomsayer4" to="." method="_on_post_post_pressed"]
-[connection signal="upvote_pressed" from="Posts/VBoxContainer/doomsayer4" to="." method="_on_post_upvote_pressed"]
-[connection signal="post_pressed" from="Posts/VBoxContainer/doomsayer5" to="." method="_on_post_post_pressed"]
-[connection signal="upvote_pressed" from="Posts/VBoxContainer/doomsayer5" to="." method="_on_post_upvote_pressed"]
-[connection signal="post_pressed" from="Posts/VBoxContainer/doomsayer6" to="." method="_on_post_post_pressed"]
-[connection signal="upvote_pressed" from="Posts/VBoxContainer/doomsayer6" to="." method="_on_post_upvote_pressed"]
-[connection signal="post_pressed" from="Posts/VBoxContainer/doomsayer7" to="." method="_on_post_post_pressed"]
-[connection signal="upvote_pressed" from="Posts/VBoxContainer/doomsayer7" to="." method="_on_post_upvote_pressed"]
+[connection signal="post_pressed" from="Posts/VBoxContainer/cracks_clue" to="." method="_on_post_post_pressed"]
+[connection signal="upvote_pressed" from="Posts/VBoxContainer/cracks_clue" to="." method="_on_post_upvote_pressed"]
 [connection signal="pressed" from="Comments/VBoxContainer/Back" to="." method="_on_back_pressed"]
 
-[editable path="Posts/VBoxContainer/doomsayer1"]
-[editable path="Posts/VBoxContainer/doomsayer2"]
-[editable path="Posts/VBoxContainer/doomsayer3"]
-[editable path="Posts/VBoxContainer/doomsayer4"]
-[editable path="Posts/VBoxContainer/doomsayer5"]
-[editable path="Posts/VBoxContainer/doomsayer6"]
-[editable path="Posts/VBoxContainer/doomsayer7"]
+[editable path="Posts/VBoxContainer/cracks_clue"]

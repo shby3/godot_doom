@@ -15,7 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://dyj7kakfwu8wh" path="res://assets/bed.glb" id="10_y6deb"]
 [ext_resource type="PackedScene" uid="uid://bbq24lq0llt1c" path="res://assets/table.glb" id="11_og1vs"]
 [ext_resource type="PackedScene" uid="uid://cjjscdwjecqnj" path="res://scenes/computer.tscn" id="14_2f3dj"]
-[ext_resource type="PackedScene" uid="uid://riioxvwqx51r" path="res://assets/doorWood2.glb" id="14_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://ddvxc1eu3w5qi" path="res://scenes/collectible.tscn" id="14_muem4"]
+[ext_resource type="PackedScene" uid="uid://h1sedxbgqqjj" path="res://scenes/teleporter.tscn" id="15_dp3eg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3y0y"]
 albedo_texture = ExtResource("8_jbj1t")
@@ -43,16 +44,37 @@ plane = Plane(0, 0, 1, 0)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0ld40"]
 plane = Plane(0, 0, -1, 0)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_jbj1t"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnc54"]
+size = Vector3(5, 3.9555664, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lnc54"]
+size = Vector2(5, 3.95)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jbj1t"]
+size = Vector3(4, 3.956, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_muem4"]
+size = Vector3(4, 3.956, 0.16)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0errm"]
+size = Vector2(6, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dp3eg"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_muem4"]
+material = SubResource("StandardMaterial3D_dp3eg")
+size = Vector2(6, 18)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_muem4"]
 viewport_path = NodePath("ScreenOffViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_muem4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ld40"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_jbj1t")
+albedo_texture = SubResource("ViewportTexture_muem4")
 
-[sub_resource type="QuadMesh" id="QuadMesh_dp3eg"]
+[sub_resource type="QuadMesh" id="QuadMesh_gqmmt"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_muem4")
+material = SubResource("StandardMaterial3D_0ld40")
 size = Vector2(1.12, 0.8)
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_muem4"]
@@ -254,17 +276,23 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0ld40"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_yc10j"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqmmt"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jscy8"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_0ld40")
+albedo_texture = SubResource("ViewportTexture_yc10j")
 
-[sub_resource type="QuadMesh" id="QuadMesh_yc10j"]
+[sub_resource type="QuadMesh" id="QuadMesh_pm3ni"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_gqmmt")
+material = SubResource("StandardMaterial3D_jscy8")
 size = Vector2(1.05, 0.66)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y6deb"]
+size = Vector3(0.24, 0.2, 0.22)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_og1vs"]
+load_path = "res://.godot/imported/fairy.png-64630e21a91931d4ffba3cee06edb5d4.s3tc.ctex"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0errm"]
 size = Vector3(2.6, 0.52, 1.55)
@@ -287,6 +315,67 @@ sky_material = SubResource("ProceduralSkyMaterial_muem4")
 background_mode = 2
 sky = SubResource("Sky_a8y0u")
 
+[sub_resource type="Animation" id="Animation_jbj1t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Structures/Wall3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Structures/Wall3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.3916314, 3.2286563, 0.0033125877)]
+}
+
+[sub_resource type="Animation" id="Animation_muem4"]
+resource_name = "window_wall_rotation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Structures/Wall3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0), Vector3(-1.5707964, 1.5707964, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Structures/Wall3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.3916314, 3.2286563, 0.0033125877), Vector3(-5.762, 3.229, 0.003)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dp3eg"]
+_data = {
+&"RESET": SubResource("Animation_jbj1t"),
+&"window_wall_rotation": SubResource("Animation_muem4")
+}
+
 [node name="Main" type="Node3D" unique_id=803185080 node_paths=PackedStringArray("player", "player_cam")]
 script = ExtResource("1_jkv2x")
 player = NodePath("Player")
@@ -300,14 +389,11 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.49
 
 [node name="Structures" type="Node3D" parent="." unique_id=454977605]
 
-[node name="doorWood" parent="Structures" unique_id=1931711869 instance=ExtResource("14_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1375313, 0)
-
 [node name="Floor" parent="Structures" unique_id=107467209 instance=ExtResource("5_jkv2x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34648788, 0)
 
 [node name="ceiling" parent="Structures" unique_id=1317484256 instance=ExtResource("6_jkv2x")]
-transform = Transform3D(1, 0, 0, 0, -1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 7.681095, 0)
+transform = Transform3D(1, 0, 0, 0, -1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 9.127998, 0)
 
 [node name="Wall" parent="Structures" unique_id=442658701 instance=ExtResource("7_jkv2x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2286563, 2.3195124)
@@ -351,8 +437,60 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9321032, -13.012152)
 shape = SubResource("WorldBoundaryShape3D_dp3eg")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="Structures/WorldBoundary" unique_id=356587110]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9321032, 11.974049)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9321032, 14.629629)
 shape = SubResource("WorldBoundaryShape3D_0ld40")
+
+[node name="SecretWall" type="StaticBody3D" parent="Structures" unique_id=640726619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012264252, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Structures/SecretWall" unique_id=205968231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.560914, 1.4551418, -1.9615006)
+shape = SubResource("BoxShape3D_lnc54")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Structures/SecretWall" unique_id=1353978031]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -4.569402, 1.4551418, -1.9615006)
+mesh = SubResource("PlaneMesh_lnc54")
+
+[node name="SecretWall2" type="StaticBody3D" parent="Structures" unique_id=1238712879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43504, 0, 3.8669152)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Structures/SecretWall2" unique_id=185585118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0024495, 1.4551418, -1.9615006)
+shape = SubResource("BoxShape3D_lnc54")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Structures/SecretWall2" unique_id=410415946]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.906035, 1.4551418, -1.9615006)
+mesh = SubResource("PlaneMesh_lnc54")
+
+[node name="SecretWall3" type="StaticBody3D" parent="Structures" unique_id=1152580833]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.3811035, 0, 4.125474)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Structures/SecretWall3" unique_id=998587395]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.560914, 1.4551418, -1.9615006)
+shape = SubResource("BoxShape3D_jbj1t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Structures/SecretWall3" unique_id=107406940]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.569402, 1.4551418, -1.9615006)
+mesh = SubResource("PlaneMesh_lnc54")
+
+[node name="SecretFloor" type="StaticBody3D" parent="Structures" unique_id=1457347024]
+transform = Transform3D(1, 0, 3.821371e-15, 3.821371e-15, 4.371139e-08, -1, 0, 1, 4.371139e-08, 0.63000625, -2.3960853, -1.392)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Structures/SecretFloor" unique_id=1846415555]
+transform = Transform3D(1, 0, -7.301438e-30, 0, 1, 0, 0, 0, 1, -4.950735, 1.4551418, -1.9615008)
+shape = SubResource("BoxShape3D_muem4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Structures/SecretFloor" unique_id=783617110]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.569402, 1.4551418, -1.9615006)
+mesh = SubResource("PlaneMesh_lnc54")
+
+[node name="InvisibleWall" type="MeshInstance3D" parent="Structures" unique_id=36174896]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -2.1471634, 1.0046353, 0)
+mesh = SubResource("PlaneMesh_0errm")
+
+[node name="InvisibleWall2" type="MeshInstance3D" parent="Structures" unique_id=46787780]
+transform = Transform3D(-2.0891198e-09, 0.04779349, 0.99885726, -1, -4.371139e-08, 0, 4.3661437e-08, -0.99885726, 0.04779349, -2.1471634, 1.0046353, 13.090534)
+mesh = SubResource("PlaneMesh_muem4")
 
 [node name="Interactables" type="Node3D" parent="." unique_id=1246688739]
 
@@ -360,7 +498,7 @@ shape = SubResource("WorldBoundaryShape3D_0ld40")
 transform = Transform3D(1.18, 0, 0, 0, 1.19, 0, 0, 0, 1, -0.26, 0, 0)
 
 [node name="Quad" parent="Interactables/Computer" index="1" unique_id=668354203]
-mesh = SubResource("QuadMesh_dp3eg")
+mesh = SubResource("QuadMesh_gqmmt")
 
 [node name="Camera3D" parent="Interactables/Computer/ScreenOffViewport" parent_id_path=PackedInt32Array(1123232871, 1009545121) index="0" unique_id=749826864]
 transform = Transform3D(1, 0, -1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 1.1373086, 1.2334094, -1.2584515)
@@ -382,7 +520,39 @@ color = Color(1, 1, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3185313, 1.4429122, -1.9567003)
 
 [node name="Quad" parent="Interactables/NumberScreen" index="0" unique_id=1450986913]
-mesh = SubResource("QuadMesh_yc10j")
+mesh = SubResource("QuadMesh_pm3ni")
+
+[node name="Window" parent="Interactables" unique_id=1774026896 instance=ExtResource("7_trceg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.73248804, 0.13164854, 0.66926616)
+
+[node name="WindowFairy" parent="Interactables" unique_id=928067954 instance=ExtResource("14_muem4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0827012, 1.3528843, -0.45663875)
+
+[node name="LowerFairy" parent="Interactables" unique_id=1701168394 instance=ExtResource("14_muem4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10807228, -0.97685814, 12.233751)
+
+[node name="LowerFairy2" parent="Interactables" unique_id=1747050014 instance=ExtResource("14_muem4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28370857, -0.7624335, 14.288029)
+
+[node name="TeleporterFairy" parent="Interactables" unique_id=2000187397 instance=ExtResource("14_muem4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.523, 0.403, -5.994)
+
+[node name="CeilingFairy" parent="Interactables" unique_id=1377610310 instance=ExtResource("14_muem4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5233078, 4.860473, -0.016089499)
+
+[node name="LampFairy" parent="Interactables" unique_id=1312170724 instance=ExtResource("14_muem4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98047596, 2.8591776, -0.36399117)
+
+[node name="CollisionShape3D" parent="Interactables/LampFairy/Interactable" parent_id_path=PackedInt32Array(1312170724, 343320752) index="0" unique_id=1532679852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05831188, -0.43751705, 0)
+shape = SubResource("BoxShape3D_y6deb")
+
+[node name="Sprite3D" parent="Interactables/LampFairy" index="1" unique_id=1762163735]
+transform = Transform3D(-0.01, 0, 0, 0, -0.01, 0, 0, 0, -0.01, 0.060960114, -0.49223673, 0)
+texture = SubResource("CompressedTexture2D_og1vs")
+
+[node name="Teleporter" parent="Interactables" unique_id=1848048408 instance=ExtResource("15_dp3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5869522, -1.6704526, -5.945384)
 
 [node name="Furniture" type="Node3D" parent="." unique_id=1081889297]
 
@@ -406,10 +576,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0328449, 0.3500778, 0)
 shape = SubResource("BoxShape3D_s3y0y")
 
 [node name="Lamp" parent="Furniture" unique_id=849868070 instance=ExtResource("10_a8y0u")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, -2.7640052, 0, -1.6)
-
-[node name="Window" parent="Furniture" unique_id=1774026896 instance=ExtResource("7_trceg")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.73248804, 0.13164854, 0.66926616)
+transform = Transform3D(1, 0, 0, 0, 2.03, 0, 0, 0, 1, -2.7640052, -0.12390661, -1.6)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1437393541]
 environment = SubResource("Environment_lnc54")
@@ -423,11 +590,30 @@ area_range = 6.125
 area_attenuation = 3.659
 area_size = Vector2(12, 12)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=334152597]
+libraries/ = SubResource("AnimationLibrary_dp3eg")
+autoplay = &"RESET"
+
+[node name="TeleportSpawn" type="Marker3D" parent="." unique_id=1445315774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+
 [connection signal="interacted" from="Interactables/Computer/Sittable" to="." method="_on_screen_interacted"]
 [connection signal="interaction_ended" from="Interactables/Computer/Sittable" to="." method="_on_screen_interaction_ended"]
+[connection signal="fairy_collected" from="Interactables/NumberScreen" to="." method="_on_number_screen_fairy_collected"]
 [connection signal="interacted" from="Interactables/NumberScreen/Sittable" to="." method="_on_screen_interacted"]
 [connection signal="interaction_ended" from="Interactables/NumberScreen/Sittable" to="." method="_on_screen_interaction_ended"]
+[connection signal="color_code_cracked" from="Interactables/Window" to="." method="_on_window_color_code_cracked"]
+[connection signal="interacted" from="Interactables/Window" to="." method="_on_window_interacted"]
+[connection signal="interaction_ended" from="Interactables/Window" to="." method="_on_window_interaction_ended"]
+[connection signal="collected" from="Interactables/WindowFairy" to="." method="_on_collectible_collected"]
+[connection signal="collected" from="Interactables/LowerFairy" to="." method="_on_collectible_collected"]
+[connection signal="collected" from="Interactables/LowerFairy2" to="." method="_on_collectible_collected"]
+[connection signal="collected" from="Interactables/TeleporterFairy" to="." method="_on_collectible_collected"]
+[connection signal="collected" from="Interactables/CeilingFairy" to="." method="_on_collectible_collected"]
+[connection signal="collected" from="Interactables/LampFairy" to="." method="_on_collectible_collected"]
+[connection signal="interacted" from="Interactables/Teleporter" to="." method="_on_teleporter_interacted"]
 
 [editable path="Player"]
 [editable path="Interactables/Computer"]
 [editable path="Interactables/NumberScreen"]
+[editable path="Interactables/LampFairy"]
