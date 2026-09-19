@@ -349,7 +349,7 @@ color = Color(1, 1, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.47775865)
 
 [node name="Sittable" parent="." unique_id=107538485 node_paths=PackedStringArray("camera", "computer") instance=ExtResource("32_fkoue")]
-transform = Transform3D(-0.022169279, -0.99975425, -8.757756e-08, -0.99975425, 0.022169279, -8.755604e-08, 1.5426906e-07, 1.4761206e-07, -0.58, 0.2265861, -0.26325166, 0.38049054)
+transform = Transform3D(-0.022169279, -0.99975425, -8.757756e-08, -0.99975425, 0.022169279, -8.755604e-08, 1.5426906e-07, 1.4761206e-07, -0.58, 0.2265861, -0.012417018, -0.14061385)
 camera = NodePath("../NumberScreenCam")
 computer = NodePath("..")
 interact_name = "Use number screen"

@@ -7,8 +7,19 @@
 [ext_resource type="Script" uid="uid://lt4j6nib3umc" path="res://scripts/comments.gd" id="4_unbx8"]
 [ext_resource type="Theme" uid="uid://cmdk4cdfjp66j" path="res://themes/comments_theme.tres" id="5_eavc1"]
 
-[sub_resource type="Resource" id="Resource_hd3h2"]
+[sub_resource type="Resource" id="Resource_eavc1"]
 script = ExtResource("4_0ryt7")
+file = "res://resources/posts/cracks_post.json"
+metadata/_custom_type_script = "uid://kfhkih0svaf6"
+
+[sub_resource type="Resource" id="Resource_qwfle"]
+script = ExtResource("4_0ryt7")
+file = "res://resources/posts/numerology_post.json"
+metadata/_custom_type_script = "uid://kfhkih0svaf6"
+
+[sub_resource type="Resource" id="Resource_seyax"]
+script = ExtResource("4_0ryt7")
+file = "res://resources/posts/walls_post.json"
 metadata/_custom_type_script = "uid://kfhkih0svaf6"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fp7m"]
@@ -41,7 +52,15 @@ mouse_filter = 2
 
 [node name="cracks_clue" parent="Posts/VBoxContainer" unique_id=1758838794 instance=ExtResource("2_8rxvp")]
 layout_mode = 2
-post_content = SubResource("Resource_hd3h2")
+post_content = SubResource("Resource_eavc1")
+
+[node name="number_clue" parent="Posts/VBoxContainer" unique_id=1084032342 instance=ExtResource("2_8rxvp")]
+layout_mode = 2
+post_content = SubResource("Resource_qwfle")
+
+[node name="walls_clue" parent="Posts/VBoxContainer" unique_id=733182655 instance=ExtResource("2_8rxvp")]
+layout_mode = 2
+post_content = SubResource("Resource_seyax")
 
 [node name="Comments" type="ScrollContainer" parent="." unique_id=1144478022 node_paths=PackedStringArray("title", "author", "post", "vbox_container")]
 visible = false
@@ -95,6 +114,12 @@ fit_content = true
 
 [connection signal="post_pressed" from="Posts/VBoxContainer/cracks_clue" to="." method="_on_post_post_pressed"]
 [connection signal="upvote_pressed" from="Posts/VBoxContainer/cracks_clue" to="." method="_on_post_upvote_pressed"]
+[connection signal="post_pressed" from="Posts/VBoxContainer/number_clue" to="." method="_on_post_post_pressed"]
+[connection signal="upvote_pressed" from="Posts/VBoxContainer/number_clue" to="." method="_on_post_upvote_pressed"]
+[connection signal="post_pressed" from="Posts/VBoxContainer/walls_clue" to="." method="_on_post_post_pressed"]
+[connection signal="upvote_pressed" from="Posts/VBoxContainer/walls_clue" to="." method="_on_post_upvote_pressed"]
 [connection signal="pressed" from="Comments/VBoxContainer/Back" to="." method="_on_back_pressed"]
 
 [editable path="Posts/VBoxContainer/cracks_clue"]
+[editable path="Posts/VBoxContainer/number_clue"]
+[editable path="Posts/VBoxContainer/walls_clue"]

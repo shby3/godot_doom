@@ -616,7 +616,7 @@ Label/constants/shadow_outline_size = 20
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lnc54"]
-size = Vector3(2.2302246, 1.413208, 0.78515625)
+size = Vector3(2.2302246, 0.48443604, 0.5420532)
 
 [node name="Window" type="Node3D" unique_id=1774026896]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
@@ -746,7 +746,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4305315, 0.8730953, -1.1785
 interact_name = "Adjust window settings"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=865533263]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30627453, 0.206604, -0.10742116)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.306275, -0.25778198, -0.22897196)
 shape = SubResource("BoxShape3D_lnc54")
 
 [connection signal="value_changed" from="Screen/ColorPicker/RedSlider" to="." method="_on_red_slider_value_changed"]

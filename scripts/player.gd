@@ -10,6 +10,9 @@ var look_dir: Vector2
 @onready var camera: Camera3D = $Camera3D
 var camera_sens: float = 50.0
 
+@onready var walking_sound: AudioStreamPlayer = $WalkingSound
+@onready var jumping_sound: AudioStreamPlayer = $JumpingSound
+
 func sit_down() -> void:
 	set_physics_process(false)
 	hide()
@@ -36,6 +39,16 @@ func _physics_process(delta: float) -> void:
 	# Jumping.
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = jump_impulse
+		jumping_sound.play()
+		
+	
+	# Walking sound effect
+	if is_on_floor() and velocity != Vector3.ZERO:
+		if not walking_sound.has_stream_playback():
+			walking_sound.play()
+	else:
+		walking_sound.stop()
+		
 
 	_rotate_camera(delta)
 	move_and_slide()

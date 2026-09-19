@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cns15tu6ebp0" path="res://scenes/screen_ui.tscn" id="3_uiul0"]
 [ext_resource type="PackedScene" uid="uid://c12kw64p68dn4" path="res://assets/keyboard.fbx" id="4_tjrug"]
 [ext_resource type="PackedScene" uid="uid://b8x2ne1xl53l1" path="res://scenes/sittable.tscn" id="5_uiul0"]
+[ext_resource type="PackedScene" uid="uid://dni3q5oekvd63" path="res://assets/chair.glb" id="6_ruko6"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_jr5mb"]
 viewport_path = NodePath("ScreenOnViewport")
@@ -56,8 +57,11 @@ fov = 66.9
 transform = Transform3D(0.67, 0, 0, 0, 0.59526885, -0.07519995, 0, 0.07519995, 0.59526885, 1.123, 0.626, -0.969)
 
 [node name="Sittable" parent="." unique_id=107538485 node_paths=PackedStringArray("camera", "computer") instance=ExtResource("5_uiul0")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.0474398, -0.20610344, -0.593308)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.1309459, -0.20610344, -1.0904806)
 camera = NodePath("../ComputerCam")
 computer = NodePath("..")
 interact_name = "Use Computer"
 is_interactable = true
+
+[node name="chair2" parent="." unique_id=38407549 instance=ExtResource("6_ruko6")]
+transform = Transform3D(-0.99953544, 0, -0.030477723, 0, 1, 0, 0.030477723, 0, -0.99953544, 1.0937417, -0.16126746, -0.7311857)

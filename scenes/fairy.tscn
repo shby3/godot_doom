@@ -13,7 +13,7 @@ material = SubResource("StandardMaterial3D_s3y0y")
 size = Vector2(1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lnc54"]
-size = Vector3(1, 0.5, 1)
+size = Vector3(0.911499, 0.13110352, 1)
 
 [node name="Fairy" type="Node3D" unique_id=222887761]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
@@ -30,4 +30,5 @@ mesh = SubResource("PlaneMesh_0errm")
 interact_name = "Speak with Fairie"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1198055662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023620605, -0.012084961, 1.110223e-16)
 shape = SubResource("BoxShape3D_lnc54")
